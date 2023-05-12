@@ -1,33 +1,16 @@
-var firstnum = document.getElementById("first_num")
-var result = document.getElementById("result")
 
-function sum(){
-    result.innerHTML = getResult("+")}
-
-    function difference(){
-        result.innerHTML = getResult("-")}
-        function product(){
-            result.innerHTML = getResult("*")}
-         function quotient(){
-         result.innerHTML = getResult("/")}
-
-         if (firstnum ===""){
-function getResult(operator){
-
-    if(operator === "+"){
-        return parseFloat(firstnum.value) +=parseFloat (result.value)
- 
-    }else if(operator === "-"){
-        return parseFloat(firstnum.value)- parseFloat (result.value)
- 
+function clearScreen() {
+        document.getElementById("result").value = "";
     }
-    else if(operator === "*"){
-        return parseFloat(firstnum.value)* parseFloat (result.value)
- 
+     
+   
+    function display(value) {
+        document.getElementById("result").value += value;
     }
-    else if(operator === "/"){
-        return parseFloat(firstnum.value)/ parseFloat (result.value)
-    }
-    }
-}
+     
 
+    function calculate() {
+        var p = document.getElementById("result").value;
+        var q = eval(p);
+        document.getElementById("result").value = q;
+    }
